@@ -10,4 +10,4 @@ AutoProducer.exe "video_script.txt" "output_filename"
 The format for the script file can be seen in example_script.txt.
 Aside from the small amount of generation settings to declare at the top, the video script and the clips to play throughout are all that is needed in the script file, making it easy and simple to make.
 
-This has a very specific target audience (me), for a very specific workflow (mine). But I imagine someone else could find use in it, so ¯\\__(ツ)_/¯.
+This has a very specific target audience (me), for a very specific workflow (mine). But I imagine someone else could find use in it, so ¯\\\_(ツ)_/¯.
