@@ -45,8 +45,7 @@ struct SegmentClip{
 };
 struct Segment{
     std::vector<SegmentClip> clips;
-    int audio_clip_count = 1;
-    int word_count = 0;
+    std::vector<int> word_counts;
 };
 
 
@@ -58,7 +57,9 @@ std::vector<std::string> media_paths;
 float clip_fade_time = 0;
 float wpm = 150;
 float background_audio_end_time = 0;
-float clip_end_time = 0;
+float segment_end_time = 0;
+bool include_audio = false;
+int current_audio_num = 1;
 Segment current_segment;
 
 
@@ -129,19 +130,40 @@ Segment ReadClips(const std::string &line){
 }
 
 void AddSegmentToVideo(const Segment &segment){
-    if(segment.word_count == 0)
+    //Get total word count
+    int total_word_count = 0;
+    for(const int count : current_segment.word_counts)
+        total_word_count += count;
+    
+    if(total_word_count == 0)
         return;
 
-    const float segment_length = segment.word_count / wpm * 60.0F;
+    const float segment_length = total_word_count / wpm * 60.0F;
 
+    // Add clips
     for(const SegmentClip &clip : segment.clips){
-        float exact_position = clip_end_time + (segment_length * clip.rel_pos);
+        float exact_position = segment_end_time + (segment_length * clip.rel_pos);
         float exact_length = segment_length * clip.rel_len;
         
         video.CreateClipOnVideoTrack(exact_position, clip.name, exact_length);
     }
 
-    clip_end_time += segment_length;
+    // Add audio
+    float curr_pos = segment_end_time;
+    for(const int text_word_count : segment.word_counts){
+        float text_length = text_word_count / wpm * 60.0F;
+
+        const std::string audio_str = std::to_string(current_audio_num);
+        
+        if(include_audio)
+            video.CreateClipOnAudioTrack(curr_pos, audio_str, text_length);
+
+        current_audio_num++;
+        curr_pos += text_length;
+    }
+
+
+    segment_end_time += segment_length;
 }
 
 
@@ -220,9 +242,13 @@ void parseGenerationSettings(std::ifstream &script){
     if(var == "wpm"){
         wpm = std::stof(arg);
     }
+    else if(var == "script_audio"){
+        include_audio = (arg[0] == 't');
+    }
     else if(var == "clip_fade"){
         clip_fade_time = std::stof(arg);
     }
+    
     else
         parsingError("The variable\"" + var + "\" is not valid.", line_number);
 
@@ -263,6 +289,8 @@ void parseAudio(std::ifstream &script){
 }
 
 void parseScript(std::ifstream &script){
+    bool text_split = false;
+    
     PARSE_LINE_START
     PARSE_ELEMENT_CHECK
     //std::cout << "Line: " << line_number << "\n";
@@ -278,15 +306,20 @@ void parseScript(std::ifstream &script){
     else{
         // Check for empty line
         if(line == ""){
-            current_segment.audio_clip_count++;
+            text_split = true;
             continue;
+        }
+
+        if(text_split){
+            current_segment.word_counts.push_back(0);
+            text_split = false;
         }
         
         //Counts the words in the script
         std::stringstream stream(line);
         std::string word;
         while(stream >> word){
-            current_segment.word_count++;
+            current_segment.word_counts.back()++;
         }
     }
 

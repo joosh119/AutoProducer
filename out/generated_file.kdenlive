@@ -11,53 +11,80 @@
         <property name="mlt_image_format">rgba</property>
         <property name="set.test_audio">0</property>
     </producer>
-    <chain id="chain19">
+    <chain id="chain28">
+        <property name="resource">9.mp4</property>
+    </chain>
+    <chain id="chain27">
         <property name="resource">media_name_17.mp4</property>
     </chain>
-    <chain id="chain18">
+    <chain id="chain26">
         <property name="resource">media_name_16.mp4</property>
     </chain>
-    <chain id="chain17">
+    <chain id="chain25">
         <property name="resource">media_name_15.mp4</property>
     </chain>
-    <chain id="chain16">
+    <chain id="chain24">
+        <property name="resource">8.mp4</property>
+    </chain>
+    <chain id="chain23">
         <property name="resource">media_name_14.mp4</property>
     </chain>
-    <chain id="chain15">
+    <chain id="chain22">
         <property name="resource">media_name_13.mp4</property>
     </chain>
-    <chain id="chain14">
+    <chain id="chain21">
         <property name="resource">media_name_12.mp4</property>
     </chain>
-    <chain id="chain13">
+    <chain id="chain20">
         <property name="resource">media_name_11.mp4</property>
     </chain>
-    <chain id="chain12">
+    <chain id="chain19">
+        <property name="resource">7.mp4</property>
+    </chain>
+    <chain id="chain18">
         <property name="resource">media_name_10.mp4</property>
     </chain>
-    <chain id="chain11">
+    <chain id="chain17">
         <property name="resource">media_name_9.mp4</property>
     </chain>
-    <chain id="chain10">
+    <chain id="chain16">
+        <property name="resource">6.mp4</property>
+    </chain>
+    <chain id="chain15">
         <property name="resource">media_name_8.mp4</property>
     </chain>
-    <chain id="chain9">
+    <chain id="chain14">
         <property name="resource">media_name_7.mp4</property>
     </chain>
-    <chain id="chain8">
+    <chain id="chain13">
         <property name="resource">media_name_6.mp4</property>
     </chain>
-    <chain id="chain7">
+    <chain id="chain12">
+        <property name="resource">5.mp4</property>
+    </chain>
+    <chain id="chain11">
         <property name="resource">media_name_5.mp4</property>
     </chain>
-    <chain id="chain6">
+    <chain id="chain10">
         <property name="resource">media_name_4.mp4</property>
     </chain>
-    <chain id="chain5">
+    <chain id="chain9">
+        <property name="resource">4.mp4</property>
+    </chain>
+    <chain id="chain8">
+        <property name="resource">3.mp4</property>
+    </chain>
+    <chain id="chain7">
         <property name="resource">media_name_3.mp4</property>
     </chain>
-    <chain id="chain4">
+    <chain id="chain6">
+        <property name="resource">2.mp4</property>
+    </chain>
+    <chain id="chain5">
         <property name="resource">media_name_2.mp4</property>
+    </chain>
+    <chain id="chain4">
+        <property name="resource">1.mp4</property>
     </chain>
     <chain id="chain3">
         <property name="resource">media_name_1.mp4</property>
@@ -73,16 +100,16 @@
     </chain>
     <playlist id="playlist0">
         <entry in="00:00:00.000" out="00:00:10.800" producer="chain3"/>
-        <entry in="00:00:00.000" out="00:00:09.599" producer="chain4"/>
-        <entry in="00:00:00.000" out="00:00:11.100" producer="chain5"/>
-        <entry in="00:00:00.000" out="00:00:05.099" producer="chain6"/>
-        <entry in="00:00:00.000" out="00:00:05.099" producer="chain7"/>
-        <entry in="00:00:00.000" out="00:00:04.400" producer="chain8"/>
-        <entry in="00:00:00.000" out="00:00:04.400" producer="chain9"/>
-        <entry in="00:00:00.000" out="00:00:04.400" producer="chain10"/>
-        <entry in="00:00:00.000" out="00:00:13.800" producer="chain11"/>
-        <entry in="00:00:00.000" out="00:00:07.799" producer="chain13"/>
-        <entry in="00:00:00.000" out="00:00:07.799" producer="chain15"/>
+        <entry in="00:00:00.000" out="00:00:09.599" producer="chain5"/>
+        <entry in="00:00:00.000" out="00:00:11.100" producer="chain7"/>
+        <entry in="00:00:00.000" out="00:00:05.099" producer="chain10"/>
+        <entry in="00:00:00.000" out="00:00:05.099" producer="chain11"/>
+        <entry in="00:00:00.000" out="00:00:04.400" producer="chain13"/>
+        <entry in="00:00:00.000" out="00:00:04.400" producer="chain14"/>
+        <entry in="00:00:00.000" out="00:00:04.400" producer="chain15"/>
+        <entry in="00:00:00.000" out="00:00:13.800" producer="chain17"/>
+        <entry in="00:00:00.000" out="00:00:07.799" producer="chain20"/>
+        <entry in="00:00:00.000" out="00:00:07.799" producer="chain22"/>
     </playlist>
     <playlist id="playlist1"/>
     <tractor id="tractor0">
@@ -91,13 +118,13 @@
     </tractor>
     <playlist id="playlist2">
         <blank length="00:00:58.350"/>
-        <entry in="00:00:00.000" out="00:00:06.900" producer="chain12"/>
+        <entry in="00:00:00.000" out="00:00:06.900" producer="chain18"/>
         <blank length="00:00:05.400"/>
-        <entry in="00:00:00.000" out="00:00:03.899" producer="chain14"/>
+        <entry in="00:00:00.000" out="00:00:03.899" producer="chain21"/>
         <blank length="00:00:03.900"/>
-        <entry in="00:00:00.000" out="00:00:03.899" producer="chain16"/>
+        <entry in="00:00:00.000" out="00:00:03.899" producer="chain23"/>
         <blank length="00:00:01.949"/>
-        <entry in="00:00:00.000" out="00:00:06.900" producer="chain17"/>
+        <entry in="00:00:00.000" out="00:00:06.900" producer="chain25"/>
     </playlist>
     <playlist id="playlist3"/>
     <tractor id="tractor1">
@@ -106,7 +133,7 @@
     </tractor>
     <playlist id="playlist4">
         <blank length="00:01:24.300"/>
-        <entry in="00:00:00.000" out="00:00:06.900" producer="chain18"/>
+        <entry in="00:00:00.000" out="00:00:06.900" producer="chain26"/>
     </playlist>
     <playlist id="playlist5"/>
     <tractor id="tractor2">
@@ -115,7 +142,7 @@
     </tractor>
     <playlist id="playlist6">
         <blank length="00:01:24.300"/>
-        <entry in="00:00:00.000" out="00:00:06.900" producer="chain19"/>
+        <entry in="00:00:00.000" out="00:00:06.900" producer="chain27"/>
     </playlist>
     <playlist id="playlist7"/>
     <tractor id="tractor3">
@@ -132,6 +159,23 @@
         <property name="kdenlive:audio_track">1</property>
         <track producer="playlist8" hide="video"/>
         <track producer="playlist9" hide="video"/>
+    </tractor>
+    <playlist id="playlist10">
+        <entry in="00:00:00.000" out="00:00:10.800" producer="chain4"/>
+        <entry in="00:00:00.000" out="00:00:09.599" producer="chain6"/>
+        <entry in="00:00:00.000" out="00:00:05.400" producer="chain8"/>
+        <entry in="00:00:00.000" out="00:00:05.699" producer="chain9"/>
+        <entry in="00:00:00.000" out="00:00:10.199" producer="chain12"/>
+        <entry in="00:00:00.000" out="00:00:13.199" producer="chain16"/>
+        <entry in="00:00:00.000" out="00:00:13.800" producer="chain19"/>
+        <entry in="00:00:00.000" out="00:00:15.599" producer="chain24"/>
+        <entry in="00:00:00.000" out="00:00:06.900" producer="chain28"/>
+    </playlist>
+    <playlist id="playlist11"/>
+    <tractor id="tractor5">
+        <property name="kdenlive:audio_track">1</property>
+        <track producer="playlist10" hide="video"/>
+        <track producer="playlist11" hide="video"/>
     </tractor>
     <tractor id="{e33d007d-d8e3-47ee-889a-2e9e1de27e23}" in="00:00:00.000" out="00:05:00.000">
         <property name="kdenlive:uuid">{e33d007d-d8e3-47ee-889a-2e9e1de27e23}</property>
@@ -229,6 +273,7 @@
         <track producer="tractor2"/>
         <track producer="tractor3"/>
         <track producer="tractor4"/>
+        <track producer="tractor5"/>
     </tractor>
     <playlist id="main_bin">
         <property name="kdenlive:folder.-1.2">Sequences</property>
@@ -330,6 +375,15 @@
         <entry in="00:00:00.000" out="00:00:00.000" producer="chain17"/>
         <entry in="00:00:00.000" out="00:00:00.000" producer="chain18"/>
         <entry in="00:00:00.000" out="00:00:00.000" producer="chain19"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain20"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain21"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain22"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain23"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain24"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain25"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain26"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain27"/>
+        <entry in="00:00:00.000" out="00:00:00.000" producer="chain28"/>
     </playlist>
     <tractor id="final_tractor" in="00:00:00.000" out="00:00:00.000">
         <property name="kdenlive:projectTractor">1</property>

@@ -15,6 +15,8 @@ height=1080
 <gen>
 // Specify your speaking words/minute, to set how long a segment of text will last. (Default is 150)
 wpm=200
+// Specify whether or not you want to place script audio into the video. (Your files should be named as sequential numbers, e.g. 1, 2, 3, ...)
+script_audio=true
 // Specify the fade effect between clips. (Default is 0)
 clip_fade=0.15
 </gen>
