@@ -1,5 +1,5 @@
 # AutoProducer
-Parses a formatted video script into a .kdenlive file, for more efficient video editing.
+Parses a formatted video script into a .kdenlive file, for more efficient video production.
 Once the video file has been generated from the script, you can open it in the Kdenlive video editor, and make minor adjustments.
 This removes the bulk of the work, i.e., adding all the clips and audio files in order and at the correct position, so that you can focus on the smaller/more important details.
 
