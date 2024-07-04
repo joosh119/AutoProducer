@@ -1,0 +1,81 @@
+// Specify the folders that contain the media needs to be pulled from.
+<media>
+folder_1
+folder_2
+folder_3
+</media>
+
+// Specify the profile of the video
+<profile>
+fps=60
+width=1920
+height=1080
+</profile>
+
+<gen>
+// Specify your speaking words/minute, to set how long a segment of text will last. (Default is 150)
+wpm=100
+// Specify the fade effect between clips. (Default is 0)
+clip_fade=0.15
+</gen>
+
+
+// Specify the paths of background audio (eg. music tracks) to play throughout the video.
+<bg_audio>
+// The a[name][time] specifies the audio that will play and the duration, in seconds.
+a[music_name_1][100]
+a[music_name_2][120]
+a[music_name_3][100]
+</bg_audio>
+
+
+
+// Start the video script.
+// Specifies what clips will play during during certain segments of the script.
+<script>
+
+// This clip will play until the audio for this text ends.
+c[media_name_1]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada neque in ullamcorper mattis. Aenean ante urna, aliquet sed lobortis quis, ullamcorper sit amet tellus. Donec a odio sed erat tempus vulputate. Suspendisse vel volutpat massa. 
+
+
+c[media_name_2]
+Nullam pharetra leo in lorem consectetur scelerisque. 
+Suspendisse at consequat justo, ut semper quam. Quisque quis ipsum tempor, dignissim tellus quis, facilisis ligula. Quisque a quam viverra, porta sem non, venenatis eros. 
+
+
+// Each text segment separated by 2 newlines specifies a different audio file.
+c[media_name_3]
+Sed iaculis eros iaculis ipsum suscipit, ac imperdiet nibh ultrices. Praesent quis aliquam dolor. Duis a nibh sem.
+
+Sed sit amet posuere leo, at commodo ligula. Phasellus lorem tortor, elementum sit amet aliquam et, tempus a velit.
+
+
+// This specifies that the clips will play sequentially.
+c[media_name_4] -> c[media_name_5]
+Donec cursus egestas eros in fringilla. Sed euismod nec arcu in fringilla. Vestibulum egestas lacinia justo. Praesent vel iaculis velit, eu pretium dui. Vivamus eu feugiat orci. Vivamus sodales lorem id ante gravida luctus.
+
+
+// You can chain them as well!
+c[media_name_6] -> c[media_name_7] -> c[media_name_8]
+Donec auctor luctus ligula, ac lobortis urna consectetur ut. Quisque maximus vehicula velit, vitae bibendum lorem maximus vel. Vestibulum in odio in tortor tempus eleifend eu fringilla justo. Suspendisse sed lorem nec risus vulputate blandit nec sed nunc. Integer sollicitudin sed leo commodo luctus.
+
+
+// This specifies that the first clip will play, then the second, and then back to the first.
+c[media_name_9] >< c[media_name_10]
+Nam euismod cursus velit, sed finibus odio pharetra congue. Nullam commodo ex ornare, sodales magna et, consequat mauris. 
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi eget libero faucibus, facilisis augue ac, mollis tellus. Pellentesque pellentesque ligula id finibus pretium.
+
+
+// You can chain these however you need to.
+c[media_name_11] >< c[media_name_12] -> c[media_name_13] >< c[media_name_14]
+Sed gravida lorem a iaculis finibus. Ut a tristique urna. Mauris eget nisi diam. Phasellus a est vel tortor mattis luctus. Suspendisse consectetur feugiat feugiat. Integer ac dui eget ligula mollis bibendum. 
+Nam congue elit ex, eget elementum magna porttitor eu. Aliquam iaculis est a neque viverra consequat. Aenean imperdiet molestie euismod. 
+
+
+// This specifies that the clips will play at the same time.
+// This isn't very useful in most cases, unless the media has some transparency.
+c[media_name_15] c[media_name_16] c[media_name_17]
+Quisque at arcu quis turpis laoreet volutpat. In viverra, lorem sed maximus pulvinar, mauris diam pulvinar lacus, ut semper odio sapien et orci.
+
+</script>
