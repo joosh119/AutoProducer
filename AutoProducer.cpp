@@ -300,6 +300,10 @@ void parseScript(std::ifstream &script){
         AddSegmentToVideo(current_segment);
 
         current_segment = ReadClips(line);
+
+        // Start word counting at zero
+        current_segment.word_counts.push_back(0);
+        text_split = false;
     }
 
     // Read the script
@@ -311,7 +315,9 @@ void parseScript(std::ifstream &script){
         }
 
         if(text_split){
-            current_segment.word_counts.push_back(0);
+            // If we haven't started counting words yet, don't split into a new word count
+            if(current_segment.word_counts.back() > 0)
+                current_segment.word_counts.push_back(0);
             text_split = false;
         }
         
